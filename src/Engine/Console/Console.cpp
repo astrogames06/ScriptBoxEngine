@@ -1,5 +1,5 @@
 #include "Console.hpp"
-#include "../Game/Game.hpp"
+#include "../../Game/Game.hpp"
 
 extern Game game;
 

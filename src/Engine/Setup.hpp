@@ -2,7 +2,8 @@
 #define SETUP_H
 
 #include "../Game/Game.hpp"
-#include "Console.hpp"
+#include "Console/Console.hpp"
+#include "Collisions/Collisions.hpp"
 #include "../utils.hpp"
 #include "Functions.hpp"
 #include "Transformation.hpp"
@@ -55,6 +56,9 @@ void LuaEngineSetup()
 
     // Transformation
     DefineTransformation();
+
+    // Collisons
+    DefineCollisions();
 }
 
 void LuaEngineUpdate()

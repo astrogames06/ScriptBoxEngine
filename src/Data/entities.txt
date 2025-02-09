@@ -1,2 +1,1 @@
-player space_ship.png 1001 896
-player2 space_ship.png 774 897
+player2 space_ship.png 577 635

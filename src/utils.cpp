@@ -45,7 +45,14 @@ Entity& GetEntityByName(const std::string& name)
     });
 
     if (it == game.killed_entities.end()) {
-        Error("! ENTITY " + name + " NOT FOUND !");
+        std::string err = "! ENTITY " + name + " NOT FOUND !";
+        auto er_it = std::find_if(game.Errors.begin(), game.Errors.end(), [&err](std::string& item) {
+            return err == item;
+        });
+        if (it != game.killed_entities.end())
+        {
+            Error(err);
+        }
     }
     static Entity default_entity;
     default_entity.name = name;

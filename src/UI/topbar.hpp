@@ -58,6 +58,18 @@ void DrawTopBar()
 
         std::string entity_text = "Entities: " + std::to_string(game.entities.size());
         DrawText(entity_text.c_str(), 20, game.HEIGHT-100, 20, GREEN);
+
+        if (!game.Errors.empty())
+        {
+            std::string last_er =  game.Errors[game.Errors.size()-1];
+            DrawText(
+                last_er.c_str(),
+                game.WIDTH-(MeasureText(last_er.c_str(), 20)*1.1),
+                game.HEIGHT-80,
+                20,
+                RED
+            );
+        }
     }
 
     if (game.run)

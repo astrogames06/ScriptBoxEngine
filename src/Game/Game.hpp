@@ -10,7 +10,7 @@
 #include <vector>
 
 #include "../Entity/Entity.hpp"
-#include "../Engine/Console.hpp"
+#include "../Engine/Console/Console.hpp"
 #include "../utils.hpp"
 
 class Game

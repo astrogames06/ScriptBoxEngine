@@ -23,6 +23,7 @@ void Kill(std::string name)
                               game.entities.end(),
                               [&](const Entity& entity) { return entity.name == name; }), 
                game.entities.end());
+
     game.killed_entities.push_back(entity);
 }
 

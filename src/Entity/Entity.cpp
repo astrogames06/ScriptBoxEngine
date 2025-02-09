@@ -11,7 +11,7 @@ void Entity::Draw()
     DrawTexturePro(this->texture,
         {0, 0, (float)this->texture.width, (float)this->texture.height},
         {(float)x, (float)y, (float)this->texture.width, (float)this->texture.height},
-        {(float)this->texture.width/2, (float)this->texture.height/2},
+        {(float)0, (float)0},
         this->angle,
         WHITE
     );

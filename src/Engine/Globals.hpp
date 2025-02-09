@@ -13,6 +13,7 @@ void DefineGlobals()
 {
     game.lua["WIDTH"] = game.WIDTH;
     game.lua["HEIGHT"] = game.HEIGHT;
+    game.lua["GREEN"] = GREEN;
 
     init_func = game.lua["Init"];
     update_func = game.lua["Update"];
