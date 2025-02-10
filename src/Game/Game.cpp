@@ -21,7 +21,7 @@ void Game::Update()
         {
             if (CheckCollisionPointRec(
                 GetMousePosition(),
-                Rectangle{(float)entity.x-entity.texture.width/2, (float)entity.y-entity.texture.height/2, (float)entity.texture.width, (float)entity.texture.height}
+                Rectangle{(float)entity.x, (float)entity.y, (float)entity.texture.width, (float)entity.texture.height}
             ) && IsMouseButtonDown(MOUSE_BUTTON_LEFT))
             {
                 if (!entity_selected)
@@ -33,10 +33,10 @@ void Game::Update()
 
             if (entity_selected)
             {
-                selected_entity->x = GetMouseX();
-                selected_entity->y = GetMouseY();
-                selected_entity->original_x = selected_entity->x;
-                selected_entity->original_y = selected_entity->y;
+                selected_entity->x = GetMouseX()-selected_entity->texture.width/2;
+                selected_entity->y = GetMouseY()-selected_entity->texture.height/2;
+                selected_entity->original_x = selected_entity->x-selected_entity->texture.width/2;
+                selected_entity->original_y = selected_entity->y-selected_entity->texture.height/2;
             }
 
             if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT))

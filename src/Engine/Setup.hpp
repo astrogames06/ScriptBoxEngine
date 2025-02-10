@@ -34,12 +34,12 @@ void LuaEngineSetup()
     game.lua.script_file("src/Scripts/main.lua");
 
     // Entity
-    game.lua.new_usertype<Entity>("Entity",
-        "name", &Entity::name,
-        "x", &Entity::x,
-        "y", &Entity::y,
-        "angle", &Entity::angle
-    );
+    // game.lua.new_usertype<Entity>("Entity",
+    //     "name", &Entity::name,
+    //     "x", &Entity::x,
+    //     "y", &Entity::y,
+    //     "angle", &Entity::angle
+    // );
     game.lua.set_function("Entity", &GetEntityByName);
 
     // Globals
