@@ -57,6 +57,7 @@ int main(void)
 
 void UpdateDrawFrame()
 {
+	game.lua["deltaTime"] = GetFrameTime();
 	if (!game.init_lua && game.run)
 	{
 		game.init_lua = true;

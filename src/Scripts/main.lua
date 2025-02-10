@@ -13,10 +13,10 @@ function Update()
     Move("pop", 3, 3)
 
     if KeyDown(KEY_A) or KeyDown(KEY_LEFT) then
-        Move("player", -10, 0)
+        Move("player", -1000*deltaTime, 0)
     end
     if KeyDown(KEY_D) or KeyDown(KEY_RIGHT) then
-        Move("player", 10, 0)
+        Move("player", 1000*deltaTime, 0)
     end
 
     if KeyPressed(KEY_R) then
