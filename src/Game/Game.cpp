@@ -57,6 +57,7 @@ void Game::Draw()
 {
     for (Entity& entity : entities)
     {
+        DrawText(std::to_string(entity.in_run).c_str(), entity.x, entity.y, 20, BLUE);
         entity.Draw();
     }
 }

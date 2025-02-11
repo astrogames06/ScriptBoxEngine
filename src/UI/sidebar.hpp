@@ -41,7 +41,10 @@ void DrawSideBar()
 			if (game.entities[i].name != "Mouse")
 			{
 				Entity& v = game.entities[i];
-				if (GuiButtonRounded({10, (float)(i-game.pre_entities)*55+75, 180, 45}, v.name.c_str(), 10.f, 50)){}
+				if (GuiButtonRounded({10, (float)(i-game.pre_entities)*55+75, 180, 45}, v.name.c_str(), 10.f, 50))
+				{
+					game.entities.erase(game.entities.begin() + i);
+				}
 			}
 		}
 

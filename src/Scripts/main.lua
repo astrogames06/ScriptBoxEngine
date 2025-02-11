@@ -12,14 +12,20 @@ end
 function Update()
     Move("pop", 3, 3)
 
+    if KeyDown(KEY_W) or KeyDown(KEY_UP) then
+        Move("player", 0, -1000*deltaTime)
+    end
     if KeyDown(KEY_A) or KeyDown(KEY_LEFT) then
         Move("player", -1000*deltaTime, 0)
+    end
+    if KeyDown(KEY_S) or KeyDown(KEY_DOWN) then
+        Move("player", 0, 1000*deltaTime)
     end
     if KeyDown(KEY_D) or KeyDown(KEY_RIGHT) then
         Move("player", 1000*deltaTime, 0)
     end
 
-    if KeyPressed(KEY_R) then
+    if KeyPressed(KEY_R) or KeyPressed(KEY_SPACE) then
         laser_amounts = laser_amounts + 1
         InitEntity("laser" .. laser_amounts, "laser.png", GetX("player")+GetWidth("player")/2, GetY("player"))
     end

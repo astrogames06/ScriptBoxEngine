@@ -19,12 +19,15 @@ void Kill(std::string name)
 {
     Entity& entity = GetEntityByName(name);
 
+    if (!entity.in_run)
+    {
+        game.killed_entities.push_back(entity);
+    }
+
     game.entities.erase(std::remove_if(game.entities.begin(), 
                               game.entities.end(),
                               [&](const Entity& entity) { return entity.name == name; }), 
                game.entities.end());
-
-    game.killed_entities.push_back(entity);
 }
 
 void DefineEntityFunctions()
