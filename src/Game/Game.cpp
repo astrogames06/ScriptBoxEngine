@@ -35,8 +35,8 @@ void Game::Update()
             {
                 selected_entity->x = GetMouseX()-selected_entity->texture.width/2;
                 selected_entity->y = GetMouseY()-selected_entity->texture.height/2;
-                selected_entity->original_x = selected_entity->x-selected_entity->texture.width/2;
-                selected_entity->original_y = selected_entity->y-selected_entity->texture.height/2;
+                selected_entity->original_x = selected_entity->x;
+                selected_entity->original_y = selected_entity->y;
             }
 
             if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
