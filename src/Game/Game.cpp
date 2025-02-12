@@ -39,10 +39,60 @@ void Game::Update()
                 selected_entity->original_y = selected_entity->y;
             }
 
+            if (selected_entity != NULL)
+            {
+                DrawRectangleLines(
+                    selected_entity->x,
+                    selected_entity->y,
+                    selected_entity->texture.width,
+                    selected_entity->texture.height,
+                    GREEN
+                );
+
+                // Left
+                DrawCircle(
+                    selected_entity->x-10,
+                    selected_entity->y+selected_entity->texture.height/2,
+                    5.f,
+                    RED
+                );
+
+                // Right
+                DrawCircle(
+                    selected_entity->x+selected_entity->texture.width+10,
+                    selected_entity->y+selected_entity->texture.height/2,
+                    5.f,
+                    GREEN
+                );
+
+                // Top
+                DrawCircle(
+                    selected_entity->x+selected_entity->texture.width/2,
+                    selected_entity->y-10,
+                    5.f,
+                    BLUE
+                );
+
+                // Top
+                DrawCircle(
+                    selected_entity->x+selected_entity->texture.width/2,
+                    selected_entity->y+selected_entity->texture.height+10,
+                    5.f,
+                    YELLOW
+                );
+            }
+
             if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
             {
-                selected_entity = NULL;
                 entity_selected = false;
+            }
+
+            if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && !CheckCollisionPointRec(
+                GetMousePosition(),
+                Rectangle{(float)entity.x, (float)entity.y, (float)entity.texture.width, (float)entity.texture.height})
+            )
+            {
+                selected_entity = NULL;
             }
         }
     }
